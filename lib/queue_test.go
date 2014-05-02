@@ -6,9 +6,7 @@ import (
 )
 
 func TestQueue(t *testing.T) {
-	messageQueue := make(chan *Message)
-	quitQueue := make(chan bool, 1)
-	queue := NewQueue(messageQueue, quitQueue)
+	queue := NewQueue()
 
 	{
 		go func() { queue.Push(NewMessage("join", "test")) }()

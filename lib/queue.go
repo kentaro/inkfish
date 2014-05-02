@@ -5,9 +5,15 @@ type Queue struct {
 	quit    chan bool
 }
 
-func NewQueue(message chan *Message, quit chan bool) (queue *Queue) {
+func NewQueue() (queue *Queue) {
+	message := make(chan *Message)
+	quit := make(chan bool, 1)
 	queue = &Queue{message: message, quit: quit}
 	return
+}
+
+func (self *Queue) Run() {
+	<- self.quit
 }
 
 func (self *Queue) Push(message *Message) {
