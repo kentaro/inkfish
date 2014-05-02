@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
-func Run(opts Option) {
+type Core struct {}
+
+func (self *Core) Run(opts Option) {
 	fmt.Println(opts)
 }

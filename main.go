@@ -16,5 +16,6 @@ func main() {
 		os.Exit(1)
 	}
 
+	inkfish := &inkfish.Core{}
 	inkfish.Run(opts)
 }
